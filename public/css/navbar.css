@@ -1,0 +1,42 @@
+
+.bg-blue{
+    background:linear-gradient( to right, rgb(96, 149, 247),rgb(5, 30, 99));
+    border-color: rgb(12,45,136);
+}
+
+.blue{
+    background-color: rgb(12,45,136);
+}
+.white{
+    color:white}
+
+.px{
+ height: 40px;
+
+}
+.logo{
+    border-radius: 50%;
+    width: 52px;
+}
+.l:hover{
+    font-weight:700;
+}
+
+.background{
+    background:rgba(147, 198, 255, 0.7);
+}
+.color{
+    color:white;
+    font-weight:bold;
+}
+.perfilICON1{
+display:none;
+}
+@media (max-width: 990px){
+    .perfilICON{
+        display: none;
+    }
+    .perfilICON1{
+        display: block;
+    }
+}

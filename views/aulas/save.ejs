@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/classShowPage.css">
+<div class="container d-flex flex-column col-10 ">
+    <div class=" d-flex mb-3">
+        <div class="d-flex flex-column ">
+            <div class="card mr-5" style="width:40rem" ">
+                    <% if(aula.images.length){ %> 
+                    <img src=" <%=img%>" class="card-img-bottom" alt="...">
+                <% } %>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=aula.title %>
+                        </h5>
+                    </div>
+            </div>
+        </div>
+        <div class=" d-flex flex-column align-items-center ml-5 border p-3 px-4">
+            <div class="d-flex">
+                <h5 class="card-title mt-4 mr-3">
+                    <%=aula.instructor.username %>
+                </h5>
+                <% if(aula.instructor.profile.photo.url){ %>
+                    <img src="<%=aula.instructor.profile.photo.url%> " class="card-img-top logoIMG" alt="...">
+                    <% } %>
+            </div>
+            <div class="align-self-start mt-3">
+                <p>
+                    Treina há: <%=aula.instructor.profile.experience%> anos
+                </p>
+                <% if(user.certificates.length){ %>
+                    <% for(let c of user.certificates){ %>
+                        <ul>
+                            <li>
+                                <a href="/user/<%=c.author%> /certificates/<%=c._id%>">
+                                    <%=c.title %>
+                                </a>
+                            </li>
+                        </ul>
+                        <% } %>
+                            <% } %>
+            </div>
+            <div class="text-center mt-3"><a href="/user/<%=aula.instructor._id %> "
+                    class="  btn btn-primary align-self-start">Ver
+                    perfil do
+                    instrutor</a></div>
+
+        </div>
+
+    </div>
+    <div class="card mb-5">
+        <div class="card-header">
+            Descrição
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">
+                <%=aula.description %>
+            </p>
+
+        </div>
+    </div>
+    <%if(currentUser && currentUser._id.equals(aula.instructor._id)){ %>
+        <div class="d-flex  my-3">
+            <button class="btn btn-info BTN mr-3"> <a class="a1" href="/class/<%=aula._id%>/edit">Editar
+                    Aula</a>
+                <form action="/class/<%=aula._id%>?_method=DELETE" method="POST"> <button class="BTN btn btn-danger">
+                        Apagar
+                        Aula</button>
+                </form>
+        </div>
+        <% } %>

@@ -1,0 +1,96 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/editSpot.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/addForms.css">
+
+    <div class="all">
+        <div class="container d-flex flex-column col-lg-6 col-md-10 col-sm-12 mb-3">
+            <form action="/spot/<%=spot._id%>?_method=PUT" method="POST" novalidate
+                class="submitform11 validated-form border contFORM" enctype="multipart/form-data">
+                <h1 class="mb-3">Editar spot</h1>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Nome do Spot</label>
+                    <input type="text" class="form-control input" placeholder="Nome do Spot" id="title"
+                        aria-describedby="emailHelp" value="<%=spot.title %> " name="title" required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descrição</label>
+                    <textarea class="form-control textarea input1" multiline="false" name="description" id="description"
+                        cols="30" rows="10"
+                        placeholder="Faz uma pequena descrição do spot. O que dá para treinar, medidas de sugurança, chamadas de atenção, etc"
+                        required><%=spot.description%></textarea>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="images">Adiciona uma imagem (obrigatório) - Max: 5 imagens </label>
+                    <input type="file" class="form-control" id="images" aria-describedby="emailHelp" name="image"
+                        multiple>
+
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Localização (Link De Localização) </label>
+                    <input type="url" class="form-control input2" value="<%=spot.location %> " id="location"
+                        aria-describedby="emailHelp" placeholder="Digite o link de localização" name="location"
+                        required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="city" aria-label="Default select example" required>
+                        <option selected id="defaultOP">
+                            <%=spot.city %>
+                        </option>
+                        <option class="option" value="Faro">Faro</option>
+                        <option class="option" value="Portimão">Portimão</option>
+                        <option class="option" value="Lagos">Lagos</option>
+                        <option class="option" value="Lagoa">Lagoa</option>
+                        <option class="option" value="Albufeira">Albufeira</option>
+                        <option class="option" value="Aljezur">Aljezur</option>
+                        <option class="option" value="Monchique">Monchique</option>
+                        <option class="option" value="Silves">Silves</option>
+                        <option class="option" value="São_Brás">São Brás</option>
+                        <option class="option" value="Olhão">Olhão</option>
+                        <option class="option" value="Tavira">Tavira</option>
+                        <option class="option" value="Alcoutim">Alcoutim</option>
+                        <option class="option" value="Castro_Marim">Castro Marim</option>
+                        <option class="option" value="Vila_Real_de_Santo_António">Vila Real de Santo António</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <% for(let img of spot.images){ %>
+                    <div class="d-flex flex-wrap mb-4 border">
+                        <div class="d-flex flex-column ">
+                            <img class="imagemedia" src="<%=img.url %>" alt="">
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="<%=img.filename%>"
+                                    name="imageToBeDeleted" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Deletar?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                        <button type="submit" class="btn btn-primary submitBTN">Adicionar</button>
+            </form>
+        </div>
+
+
+
+    </div>
+    <div class="div"></div>
+    <div class="div2 d-flex flex-column"></div>
+    <span class="loader1"></span>
+
+    <script src="/scripts/editSpotValidateSpot.js"></script>
+    <script src="/scripts/editSpot.js"></script>
+    <script src="/scripts/validateFormLoader.js"></script>

@@ -1,0 +1,46 @@
+
+
+
+
+.admin{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.admin__input {
+  border: none;
+  background-color: #41398e;
+  padding: 1rem 1.8rem;
+  color: #e2e0e0;
+  border-radius: 10rem;
+  margin-right: 2.5rem;
+}
+
+.admin__submit {
+  border: none;
+  background-color: #354060;
+  padding: 1rem 1.8rem;
+  color: #e2e0e0;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.admin__submit:focus {
+  outline: none;
+}
+
+.files__entity {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 5px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+#hideBTN{
+  background-color: white;
+  border:none;
+}
+#hideBTN:hover{
+  color:rgb(167, 164, 164);
+}

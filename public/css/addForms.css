@@ -1,0 +1,33 @@
+ body{
+     
+    background:linear-gradient( to right, rgb(96, 149, 247),rgb(5, 30, 99));
+
+}
+ .border{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+        }
+.contFORM{
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1.5px 1.5px 1px rgb(201, 200, 200)
+}
+.contFORM1{
+    justify-self: center;
+    padding: 4em;
+    padding-top:2em;
+    background-color: white;
+    box-shadow: 1px 1.5px 1.5px 1px rgb(201, 200, 200)
+}
+
+.contFORM1 p{
+    font-size:16px;
+}
+
+@media(max-width:500px){
+    .contFORM1 p{
+    font-size:13px;
+}
+ .contFORM1 h4{
+    font-size:18px;
+}
+}

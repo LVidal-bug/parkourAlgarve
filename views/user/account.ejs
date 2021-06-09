@@ -1,0 +1,125 @@
+<%- layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;400&display=swap" rel="stylesheet">
+    <div class="d-flex flex-column">
+        <div class="cont border">
+            <div class="upperpart1">
+                <% if(user.profile.photo.url){ %>
+                    <img src="<%=user.profile.photo.url%>" class="image " alt="">
+
+                    <% } %>
+                        <% if(!user.profile.photo.url){ %>
+                            <img src="/images/perfil.png" class="image " alt="">
+
+                            <% } %>
+                                <div class="info ">
+                                    <h4 class="userPlace">
+                                        <%=user.username %>
+                                    </h4>
+
+                                    <div class="infopluss">
+
+                                        <% if(user.profile.age){ %>
+                                            <span class="span mr-4">
+                                                <b>Idade: <%=user.profile.age %></b>
+                                            </span>
+
+                                            <% }if(user.profile.experience){ %>
+                                                <span class="span mr-4">
+                                                    <b>Treina há <%=user.profile.experience %> anos</b>
+                                                </span>
+                                                <% }if(user.profile.city){ %>
+                                                    <span class="span ">
+                                                        <b>
+                                                            Cidade: <%=user.profile.city %>
+                                                        </b>
+                                                    </span>
+                                                    <% } %>
+                                    </div>
+
+
+                                </div>
+
+
+            </div>
+            <% if(user.profile.description){ %>
+                <div class="description mb-3">
+                    <%=user.profile.description %>
+
+                </div>
+                <% } %>
+                    <% if(currentUser) {%>
+                        <% if( currentUser.isInstructor===true && `${user._id}`===`${currentUser._id}`){%>
+
+                            <div class="border d-flex flex-column  mt-3 p-3 width">
+                                <h4>Adicionar certificado</h4>
+                                <form action="/user/<%=user._id%>/addCertificate" class="mt-3 "
+                                    enctype="multipart/form-data" method="POST">
+                                    <label for="title">Nome do certificado</label>
+                                    <input type="text" class="form-control" id="title" name="title">
+
+                                    <label for="pdf" class="pdfAdd">Adicionar Ficheiro (.pdf)</label>
+                                    <input type="file" class="hide" accept="application/pdf" class="uploadPDf"
+                                        name="uploadPDF" id="pdf" multiple>
+                                    <p><button class="formBTN " type="submit">Adicionar certificado</button></p>
+                                </form>
+
+                            </div>
+
+                            <%} if(user.certificates.length){ %>
+
+
+                                <h5 class="mt-3 ">Certificados:</h5>
+                                <% for(let c of user.certificates) {%>
+
+                                    <div class=" mb-3 ">
+                                        <div class="admin">
+                                        </div>
+                                        <link rel="stylesheet" href="/css/files.css">
+                                    </div>
+                                    <% } %>
+                                        <% } %>
+                                            <% } %>
+                                                <% if(currentUser){ %>
+                                                    <% if( `${user._id}`===`${currentUser._id}`){ %>
+                                                        <div class="d-flex ">
+                                                            <a href="/user/<%=user._id%>/editProfile "
+                                                                class="mt-3 btn btn-info">Editar
+                                                                perfil</a>
+                                                            <span><a href="/logout"
+                                                                    class="mt-3 ml-3 btn btn-info bg-blue ">Logout</a></span>
+                                                        </div>
+                                                        <% } %>
+                                                            <% } %>
+        </div>
+
+
+    </div>
+    <script>
+        const parentDiv = document.querySelector(".admin");
+        window.addEventListener("load", async () => {
+            try {
+                let result = await axios({
+                    method: "GET",
+                    url: "/api/getFiles",
+                });
+                console.log(result)
+                let files = result.data.files;
+                console.log(files)
+                files.forEach((file) => {
+                    markup = `
+                     <div class="files__entity">
+                      <i class="files__icon fa fa-file-text" aria-hidden="true"></i>
+                     <p> <li class="mr-3"><a href="/user/${file.author}/certificates/${file._id}" class="files__link"><i class="fa fa-eye tests__icon" aria-hidden="true"></i>${file.title}</a></li></p>
+                     </div> 
+                    `;
+                    parentDiv.insertAdjacentHTML("beforeend", markup);
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        });
+    </script>
+    <script src="/scripts/file.js"></script>

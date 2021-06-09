@@ -1,0 +1,56 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/googleBTN.css">
+    <div class="container  col-lg-6 col-md-10 col-sm-12 my-5">
+
+
+
+        <div class="container cont1 border col-lg-9 col-md-8 col-sm-12  p-4 ">
+            <h3 class="text-center mb-4">Criar conta Parkour Algarve!</h3>
+            <form action="/register" method="POST" class="validated-form " novalidate>
+                <div class="mb-3 input-container1">
+                    <label for="username" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control input1" name='username' id="username"
+                        placeholder="Digite o seu nome completo" required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3 input-container2">
+                    <label for="exampleInputEmail1" class="form-label">Email </label>
+                    <input type="email" name="email" class="form-control input2" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Digite o seu email" required>
+                    <div id="emailHelp" class="form-text">O seu email estará seguro. Não o iremos partilhá-lo com
+                        ninguém
+                    </div>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3 input-container">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control input" id="exampleInputPassword1"
+                        placeholder="Digite uma palavra-passe" required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary submitBTN">Registrar</button>
+            </form>
+            <hr class="mt-4">
+            <p class="text-center mt-3">ou </p>
+            <hr class="mb-4">
+            <div class="row ">
+                <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block  btn-outline googletext"
+                        href="/auth/google"><img class="mr-2"
+                            src="https://img.icons8.com/color/16/000000/google-logo.png">
+                        Registrar com
+                        Google</a> </div>
+            </div> <br>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='/scripts/validateForm.js'></script>
+
+    <script src='/scripts/registervalidation.js'></script>

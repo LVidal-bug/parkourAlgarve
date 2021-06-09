@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkour ALgarve</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/boilerplate.css">
+    <link rel="stylesheet" href="/calendar/evo-calendar.min.css">
+    <link rel="stylesheet" href="/calendar/evo-calendar.royal-navy.min.css">
+
+    <link rel="stylesheet" href="/css/agenda.css">
+
+</head>
+
+<body>
+    <%- include('./partials/navbar')%>
+        <main class="main container  mt-5 col-12 d-flex flex-column">
+            <div id="calendar"></div>
+        </main>
+
+
+        <%- include('./partials/footer')%>
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js">
+</script>
+<script src="/calendar/evo-calendar.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    let calendarEvents = []
+    function run() {
+        $('#calendar').evoCalendar({
+            theme: 'Royal Navy',
+            language: 'pt',
+            todayHighlight: true,
+            eventHeaderFormat: 'd / MM / yyyy',
+            calendarEvents: calendarEvents
+
+
+        });
+
+    }
+    axios.get('http://localhost:3000/api/allEvents', {
+    }).then((response) => {
+        console.log(response)
+
+        response.data.calendarEvents.forEach(element => {
+            if (element.date[0] !== element.date[1]) {
+                let date = new Date(element.date[0])
+                let date1 = new Date(element.date[1])
+                let m = date.getMonth()
+                let d = date.getDate()
+                date = `${d}/${m}`
+                let m1 = date1.getMonth()
+                let d1 = date1.getDate()
+                date1 = `${d1}/${m1}`
+                element.badge = `${date} - ${date1}`
+
+            }
+            if (element.type === 'Aula') {
+                element.color = '#0099ff'
+                if (!element.description) element.description = element.type.toUpperCase()
+                else { element.description = `${element.type.toUpperCase()} - ${element.description}` }
+
+            }
+            if (element.type === 'Evento') {
+                element.color = '#ff9900'
+                if (!element.description) element.description = element.type.toUpperCase()
+                else { element.description = `${element.type.toUpperCase()} - ${element.description}` }
+
+            }
+            if (element.type === 'Treino Livre') {
+                element.color = '#00ff22'
+                if (!element.description) element.description = element.type.toUpperCase()
+                else { element.description = `${element.type.toUpperCase()} - ${element.description}` }
+            }
+
+            if (element.type === 'Outro') {
+                element.color = '#9900ff'
+                if (!element.description) element.description = element.type.toUpperCase()
+                else {
+                    element.description = `${element.type.toUpperCase()} - ${element.description}`
+
+                }
+
+            }
+            calendarEvents.push(element)
+        });
+        run()
+
+    }, (error) => {
+        console.log(error);
+    })
+
+
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+<!-- JavaScript Bundle with Popper -->
+
+
+</html>

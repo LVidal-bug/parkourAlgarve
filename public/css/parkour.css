@@ -1,0 +1,22 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    text-align:justify;
+ 
+   
+
+
+}
+h1{
+        font-family: 'Lobster', cursive;
+
+}
+.cont{
+     font-size:20px;
+}
+
+.blueTITLE{
+    color: rgb(0, 132, 255);
+}
+.blueSUBTITLE{
+    color: rgb(95, 178, 255);
+}

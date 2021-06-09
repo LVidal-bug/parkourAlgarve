@@ -1,0 +1,14 @@
+.hide{
+    display: none;
+}
+
+.imagemedia{
+    width:150px;
+    object-fit: cover;
+}
+
+.border{
+    padding: 1.5em;
+border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+        
+}

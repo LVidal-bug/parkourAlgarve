@@ -1,0 +1,46 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/addVideo.css">
+    <div class="container col-8">
+        <h1 class="mb-4 d-flex">Adiconar Video </span> </h1>
+        <ul>
+            <li>Adicionar um vídeo à tua aula irá despertar o interesse de novos praticantes a experimentar as tuas
+                aulas!</li>
+            <li>Faz o vídeo cujo o intuito seja a sua reprodução sem som, mostrando o que ensinas nas tuas aulas
+            </li>
+            <li>O vídeo tem que ser breve podendo ter no máximo 1 minuto e meio, não podendo exceder os 300 MB e tem de
+                estar em formato "mp4"
+            </li>
+        </ul>
+
+
+
+
+
+        <label for="video" class="d-flex flex-column ">
+            <div class="addVideoBTN ">
+
+                <span class="mr-3 label">Adicionar vídeo </span>
+                <span class="mt-2 loader hide "></span>
+                <img class="image" src="/images/addVideo.png" alt="">
+                <form method="POST" action="/addVideo/<%=aula._id %>/<%=aula.instructor%>"
+                    enctype="multipart/form-data">
+                    <input type="file" name="video" id="video" class="hide video">
+
+
+            </div>
+
+            <span class="warning mt-3"></span>
+            <button class="btn btn-success submitBTN mt-3">Submeter</button>
+            </form>
+        </label>
+
+
+
+
+
+    </div>
+    <script>
+        const aula = '<%=aula._id%>'
+        const instructor = '<%=aula.instructor%>'
+    </script>
+    <script src="/scripts/video.js"></script>

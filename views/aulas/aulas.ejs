@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/AdicionarAula.css">
+    <div class="d-flex flex-column col-12 d-flex flex-column main ">
+        <% if(currentUser && currentUser.isInstructor) { %>
+            <div class="d-flex butt"> <button class="btn BTN blue"> <a href="/addNew/class" class="a">Adicionar Aula</a>
+                </button></div>
+            <% } %>
+                <div class="container d-flex col-12 flex-wrap mainCont justify-content-around ">
+                    <% for(let aula of aulas){ %>
+                        <div class="card mb-5 mt-3 aula" id="style">
+                            <% if(aula.images && aula.images.length){ %>
+                                <img src="<%=aula.images[0].url %> " class="card-img-top img" alt="...">
+                                <% } %>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%=aula.title %>
+                                        </h5>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <%=aula.location %>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Instrutor: <%=aula.instructor.username%>
+                                        </li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <a href="/class/<%=aula._id%> " class="card-link">Ver detalhes</a>
+                                    </div>
+                        </div>
+                        <% } %>
+                </div>
+    </div>

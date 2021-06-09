@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/navbar.css">
+
+<nav class="mainNAV navbar sticky-top navbar-expand-lg navbar-dark bg-blue">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo2.jpg" class="logo" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link l" href="/sobreNos">Sobre nós</a>
+                <a class="nav-link l" href="/parkour">A nossa modalidade</a>
+                <a class="nav-link l" href="/classes">Aulas</a>
+
+                <a class="nav-link l" href="/agenda">Agenda</a>
+                <% if(currentUser && currentUser.isAdmin) {%>
+                    <a class="nav-link" href="/permissions/admin">Permissões</a>
+                    <% } %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle l" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Spots
+                            </a>
+                            <ul class="dropdown-menu background" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item color " href="/allSpots">Ver todos os Spots</a></li>
+                                <li><a class="dropdown-item color " href="/addNew/spot">Adicionar Spot</a></li>
+                                <% if(currentUser && currentUser.isAdmin) {%>
+                                    <li>
+                                        <hr class="dropdown-divider ">
+                                    </li>
+                                    <li><a class="dropdown-item color " href="/allSpots/admin">Validar Spots</a></li>
+                                    <% } %>
+                            </ul>
+                        </li>
+
+
+            </div>
+            <div class="navbar-nav ml-auto">
+
+                <% if(!currentUser) {%>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Register</a>
+                    <% } else {%>
+                        <a class="nav-link px perfilICON" href="/user/<%=currentUser._id%>"> <i
+                                class=" large material-icons">account_circle</i>
+                        </a>
+                        <a class="nav-link px perfilICON1" href="/user/<%=currentUser._id%>"> Meu perfil
+                        </a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,280 @@
+
+.preview{
+color:rgb(27, 101, 238);
+font-size:15px;
+text-decoration: underline;
+}
+
+.cont{
+    width: 1100px;
+    letter-spacing:1px;
+    display:flex;flex-direction: column;    padding: 2em;
+}
+
+.border{
+border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+        }
+
+.image{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    object-fit:cover;
+    margin-right: 5em;
+}
+.upperpart{
+    width:1000px;
+      font-family: 'Antonio', sans-serif;
+    display:flex;
+}
+.upperpart1{
+    width:1000px;
+    display:flex;
+    
+}
+.info{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+.infopluss{
+    height:30px;
+    display:flex;
+    justify-content: space-between;
+   
+    
+}
+.span{
+    width:33%,
+}
+b{
+    font-weight: 600;
+}
+.textarea{
+    display:flex;
+    flex-direction: column;
+    
+}
+.state{
+    display:flex;
+}
+.blue{
+    color: rgb(27, 101, 238);
+}
+.description{
+    margin-top:1.5em;
+    width:1000px;
+    text-align:justify;
+}
+.white{
+    color:white;
+    
+}
+.infoform{
+    margin-left: 1em;
+width: 150px;
+}
+.divs{
+display: flex;
+align-items: center;
+}
+.hide{
+width:0;
+height:0;
+z-index: -1;
+position: absolute;
+overflow: hidden;
+opacity: 0;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.userPlace{
+    
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.addImage{
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.previewImg{
+    display:none;
+    margin: 0;
+}
+
+.pdfAdd{
+    color: rgb(44, 131, 231);
+    margin-top: 1em;
+    background-color: rgb(199, 215, 245);
+}
+.pdfAdd:hover{
+     transition: 0.5s background-color;
+     transition: 0.5s color;
+    background-color:rgb(163, 190, 241);
+    color: white;
+}
+
+.formBTN{
+
+    margin-top:2em;
+    width:12em;
+    padding-left: 1em ;
+    padding-right: 1em ;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    color: white;
+    background-color: rgba(55, 136, 202, 0.7);
+    border: 1px solid rgba(55, 136, 202, 0.7);
+}
+
+.formBTN:hover{
+     transition: 0.5s background-color;
+     transition: 0.5s border;
+    background-color: rgb(177, 211, 238);
+     border: 1px solid rgb(177, 211, 238);
+     
+}
+.width{
+    width: 35%;
+}
+
+a{
+    font-size: 17px;
+    text-decoration: none;
+    color:black;
+}
+
+.label{
+    font-size:13px;
+    text-decoration: underline;
+}
+@media(max-width:1200px){
+    .cont, .upperpart1{
+        width:900px
+    }
+    .description{
+        width:850px
+    }
+}
+.width{
+    width: 50%;
+}
+@media(max-width:1000px){
+      .cont, .upperpart1{
+        width:700px
+    }
+      .description{
+        width:650px
+    }
+    .infoplus{
+        height: 95px;
+        flex-direction: column;
+    }
+    .infoplus label{
+        width:125px
+        }
+        .width{
+    width: 70%;
+}
+ 
+}
+@media(max-width:820px){
+    .upperpart1{
+        flex-direction: column;
+    }
+         .cont{
+        width:100%
+    }
+    .upperpart1, form{
+    width: 100%;
+    }
+      .description{
+          margin-top: 1em;
+        width:100%
+    }
+    .files__entity{
+    width:200px;
+    }
+    .files__entity form{
+        width:50px
+    }
+    .files__link{
+        width:100px
+    }
+       .width{
+    width: 80%;
+}
+  .creds{
+       width: 700px;
+   }
+ 
+}
+
+@media(max-width:600px){
+    .upperpart1{
+        flex-direction: column;
+        align-items: center;
+        height: 250px;
+    }
+    .info{
+        width:100%;
+    }
+    .info h4{
+        align-self: center;
+    }
+    .image{
+        margin: 0;
+    }
+     .cont{
+        width:100%
+    }
+    .files__entity{
+    width:200px;
+    }
+    .files__entity form{
+        width:50px
+    }
+    .files__link{
+        width:100px
+    }
+    .icon{
+        width: 75px;
+        height: 75px;
+    }
+      .width{
+    width: 100%;
+}
+.infopluss{
+           font-size: 11px;
+    align-self: space-around;
+    
+}
+
+}
+@media(max-width:418px){
+        .infopluss{
+            text-align: center;
+            flex-direction: column;
+            align-self: center;
+            font-size: 13px;
+        }
+        .infopluss span:nth-of-type(2),.infopluss span:nth-of-type(3) {
+            margin-top: 5px;
+            
+        }
+        .infopluss span:nth-of-type(2){
+            margin-left: 0.7em;
+        }
+        .infopluss span:nth-of-type(3){
+            margin-right: 1.5em;
+        }
+}

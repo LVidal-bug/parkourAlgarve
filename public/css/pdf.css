@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.preview{
+color:white;
+font-size:15px;
+text-decoration: underline;
+align-self: end;
+}
+.top-bar {
+  background: rgb(12, 45, 136);
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+}
+
+.btn {
+  background: rgb(27, 101, 238);
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.7rem 2rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.page-info {
+  margin-left: 1rem;
+}
+
+.error {
+  background: orangered;
+  color: #fff;
+  padding: 1rem;
+}
+.border{
+border-bottom: 1px solid rgba(0, 0, 0, 0.25)}
+
+.maxWidth{
+  width: 100%;
+}

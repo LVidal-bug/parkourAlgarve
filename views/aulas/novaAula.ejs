@@ -1,0 +1,52 @@
+<%- layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/addForms.css">
+
+    <div class="container d-flex flex-column col-lg-6 col-md-10 col-sm-12 mb-3 ">
+        <form action="/addNew/class" method="POST" class="validated-form contFORM border p-3" novalidate
+            enctype="multipart/form-data">
+            <div class="mb-3">
+                <h1 class="mb-3">Cria uma Aula</h1>
+
+                <label for="title" class="form-label">Nome da Aula</label>
+                <input type="text" class="form-control input" id="title" aria-describedby="emailHelp" name="title"
+                    placeholder="Adiciona um nome" required>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição</label>
+                <textarea class="form-control input1" name="description" id="description" cols="30" rows="10"
+                    placeholder="Fale sobre a sua aula: o que ensina, o que faz, quais as regras, regularidade das aulas, preço, espaços de treino, a sua visão, etc. "
+                    required></textarea>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="images">Adiciona uma imagem (obrigatório) - Max: 15 imagens </label>
+                <input type="file" class="form-control" id="images" aria-describedby="emailHelp" name="image" multiple
+                    required>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Localização</label>
+                <input type="text" class="form-control input2" id="location" aria-describedby="emailHelp"
+                    name="location" required placeholder="Localização">
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary submitBTN">Submeter </button>
+
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="/scripts/newClassValidateForm.js"></script>
+    <script src="/scripts/validateFormLoader.js"></script>

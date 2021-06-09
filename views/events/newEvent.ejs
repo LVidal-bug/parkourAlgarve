@@ -1,0 +1,104 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/addForms.css">
+    <link rel="stylesheet" href="/css/newEvent.css">
+    <div class="container d-flex flex-column col-lg-6 col-md-10 col-sm-12 mb-3">
+        <form action="/new/event" method="POST" class="contFORM border validated-form  p-4" novalidate>
+            <h3>Agendar Evento</h3>
+
+            <div class=" mb-3">
+                <label for="name"> <span class="form-text">Nome</span></label>
+                <input type="text" class="form-control nameInp" id="name" placeholder="Nome do evento" name="name"
+                    aria-describedby="emailHelp">
+
+            </div>
+            <label for="description"> <span class="form-text">Descrição</span>
+            </label>
+            <div class="mb-3"> <textarea type="text" class="form-control" id="description" placeholder="Descrição"
+                    name="description" aria-describedby="emailHelp" rows="5"></textarea> </div>
+
+            <div class="mb-3  d-flex ">
+                <div class="col-lg-4 col-sm-6"> <label for="type"> <span class="form-text">Tipo de evento</span>
+                    </label>
+                    <div class="col-12 d-flex align">
+                        <select class="form-select" name="type" id="type">
+                            <option value="Aula">Aula</option>
+                            <option value="Evento">Evento</option>
+                            <option value="Treino Livre">Treino Livre</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-8 col-sm-6 d-flex flex-column ml-1">
+                    <label for="freeSpaces"> <span class="form-text">Vagas</span>
+                    </label>
+                    <input type="number" name="freeSpaces" id="freeSpaces" placeholder="Por padrão ilimitadas" min="0"
+                        max="300">
+                </div>
+
+            </div>
+            <label for="date"><span class="form-text">Data de começo e fim do evento</span></label>
+
+            <div class="d-flex mb-3">
+                <div class='input-group date' id='datepicker'>
+                    <div class="input-group input-daterange"> <input type="text" name="startDate"
+                            class="form-control input1 dateStart" placeholder="Data inicial" readonly> <input
+                            type="text" class="form-control input2" name="endDate" placeholder="Data final" readonly>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="hourContainer mb-3">
+                <div class="d-flex  col-12 ">
+                    <div class="d-flex flex-column col-4  ">
+                        <label for="startHour"><span class="form-text">Hora inicial</span></label>
+                        <input type="time" name="startHour" class="startHour " id="starHour">
+
+                    </div>
+                    <div class="d-flex flex-column col-4 ml-2">
+                        <label for="endHour"><span class="form-text">Hora final</span></label>
+                        <input type="time" class="endHour" name="endHour">
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-control locContainer">
+                <p class="loc">Selecionar Localização</p>
+                <input type="text" name="location" id="" class="hide">
+            </div>
+            <hr>
+            <h5 class="mb-3">Agendar Publicação</h5>
+            <div class="d-flex">
+                <div class="d-flex flex-column col-6 ml-2">
+
+                    <label for="whiteListDate"><span class="form-text">Data de Publicação</span></label>
+
+                    <input type="text" class="form-control input1 inputWhite" name="whiteListDate"
+                        placeholder="Data de Publicação" readonly>
+
+                </div>
+                <div class="d-flex flex-column col-6 ml-2">
+                    <label for="whiteListHour"><span class="form-text">Hora de Publicação</span></label>
+                    <input type="time" id="whiteListHour" class="whiteListHour" name="whiteListHour">
+
+                </div>
+            </div>
+            <div class="">
+                <input class="sendEmail" type="checkbox" name="sendMail" value="true" id="flexCheckDefault">
+
+            </div>
+
+            <button type="submit" id="date1" class="btn btn-primary mt-5 submitBTN">Agendar</button>
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"
+            rel="stylesheet" id="bootstrap-css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/scripts/newEvent.js"></script>

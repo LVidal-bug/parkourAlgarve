@@ -1,0 +1,146 @@
+body{
+         background:linear-gradient( to right, rgb(96, 149, 247),rgb(5, 30, 99));
+
+     display: flex;
+   flex-direction: column;
+    height: 100vh;
+}
+.footer{
+    margin-top:auto;
+}
+.mainDiv{
+   
+  
+}
+.videoDIV{
+      height: 92vh;
+
+}
+.video{
+width: 100%;
+      height: 92vh;
+
+object-fit:cover;
+}
+.text{
+    padding:2em;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    margin: 2em 3em;
+    height:400px;
+    letter-spacing:1px;
+    font-size:32px;
+    color:white;
+    background-color:rgba(0, 132, 255, 0.918);
+}
+.textP{
+
+    width:60%;
+}
+.image{
+    width: 30%;
+}
+.image img{
+        background-color:white;
+
+        box-shadow: inset 0 0 1em rgb(0, 162, 255), 0 0 1em rgb(0, 4, 255);
+
+    width:100%;
+    object-fit:cover;
+}
+.link{
+    margin:0 0.5em;
+     font-size:22px;
+     color:white;
+    font-weight:700;
+}
+
+@media(max-width:1450px){
+     .textP{
+         font-size: 25px;
+     }   
+     .text{
+         height: 320px;
+     }
+}
+@media(max-width:1230px){
+      .videoDIV, .video{
+      height: 561px;
+
+}
+
+    .textP{
+         font-size: 20px;
+     }   
+      
+}
+@media(max-width:1000px){
+    .videoDIV, .video{
+      height: 561px;
+
+}
+   .video{
+    object-fit:contain;
+}
+ .textP, .link{
+         font-size: 17px;
+     }  
+     .textP{
+         heigth:90%;
+     }
+      .text{
+         height: 280px;
+     }
+}
+@media(max-width:900px){
+    .text{
+        margin: 0;
+    }
+}
+@media  (max-width:765px){
+    .videoDIV, .video{
+      height: 429px;
+
+}
+.textP{
+    font-size:15px;
+}
+.link{
+    margin-top: 0.5em;
+    display:block;
+    text-align:center;
+}
+}
+@media(max-width:600px){
+     .videoDIV, .video{
+      height: 370px;
+
+}
+
+.text{
+    height: 400px;
+    padding: 1em;
+    flex-direction: column;
+
+}
+.textP{
+    width: 100%;
+}
+.image{
+    margin-top: 1em;
+    align-self: center;
+    width: 70%;
+}
+}
+@media(max-width:500px){
+     .videoDIV, .video{
+      height: 285px;
+
+}}
+@media (max: width 375px){
+     .videoDIV, .video{
+      height: 200px;
+
+}
+}

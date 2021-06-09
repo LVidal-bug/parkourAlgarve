@@ -1,0 +1,21 @@
+.input-container[data-error] .error{
+    border-color: #c92432;
+    color: #c92432;
+    background:#fffafa;
+}
+
+.input-container[data-error]::after{
+    content: attr(data-error);
+    font-size: 14px;
+    color: #c92432;
+    display: block;
+    margin: 10px 0;
+}
+
+.selectCont[data-error]::after{
+ content: attr(data-error);
+    font-size: 14px;
+    color: #00b6d6;
+    display: block;
+    margin: 10px 0;
+}

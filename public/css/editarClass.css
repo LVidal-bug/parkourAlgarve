@@ -1,0 +1,31 @@
+.hide{
+width:0;
+height:0;
+z-index: -1;
+position: absolute;
+overflow: hidden;
+opacity: 0;
+}
+.inpFile{
+    
+    color: rgb(44, 131, 231);
+    margin-top: 1em;
+    background-color: rgb(199, 215, 245);
+
+}
+.inpFile:hover{
+     transition: 0.5s background-color;
+     transition: 0.5s color;
+    background-color:rgb(163, 190, 241);
+    color: white;
+}
+
+img{
+    width:200px;
+}
+
+@media(max-width:500px){
+    .imagemedia{
+        width:150px;
+    }
+}

@@ -1,0 +1,20 @@
+body{
+    height:100vh;
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+ background:linear-gradient( to right, rgb(96, 149, 247),rgb(5, 30, 99));
+
+}
+.footer{
+    width:100%;
+    position:absolute;
+    top:94%;
+}
+.main{
+    height:620px;
+
+}
+#calendar{
+    height: 100%;    
+}
+

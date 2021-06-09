@@ -1,0 +1,61 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/editarClass.css">
+    <link rel="stylesheet" href="/css/addForms.css">
+
+    <div class="container  col-lg-8 col-md-10 col-sm-12 ">
+        <form action="/class/<%=aula._id %>?_method=PUT" method="POST" novalidate
+            class="validated-form contFORM border p-3 mb-5" enctype="multipart/form-data">
+            <h1 class="mb-5">Editar Aula</h1>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Nome da aula</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%=aula.title%> " required>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+
+            <div class=" mb-3">
+                <label for="localização" class="form-label">Localização</label>
+                <input type="text" class="form-control" id="localização" name="location" value="<%=aula.location %>"
+                    required>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+
+            <div class=" mb-3">
+                <label for="descrição" class="form-label">Descrição</label>
+                <textarea cols="30" rows="10" type="text" class="form-control textarea" id="descrição"
+                    name="description" required><%=aula.description %>   </textarea>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+            <div class=" mb-3">
+                <label for="images" class="form-label inpFile">Adicionar Imagens</label>
+                <input type="file" class="form-control hide" id="images" name="image" multiple required>
+                <div class="valid-feedback">
+                    Parece Bem!
+                </div>
+            </div>
+            <h5 class="mb-4">Deletar imagens</h5>
+            <% for(let img of aula.images){ %>
+                <div class="d-flex flex-wrap mb-4">
+                    <div class="d-flex flex-column">
+
+                        <img class="imagemedia" src="<%=img.url %>" alt="">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="<%=img.filename%>"
+                                name="imageToBeDeleted" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Deletar?
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                    <button type="submit" class="btn btn-primary ">Submit</button>
+
+        </form>
+    </div>

@@ -1,0 +1,52 @@
+body{
+     background:linear-gradient( to right, rgb(96, 149, 247),rgb(5, 30, 99));
+}
+.mainCont img{
+    width:480px;
+    height:300px;
+    object-fit: cover;
+}
+.mainCont{
+    background-color: white;
+    padding: 2em;
+    width: 80%;
+    align-content:space-between;
+}
+.cont{
+    justify-content:space-between;
+}
+.border{
+border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+        }
+
+.slide, .carousel-item{
+    width:480px
+}
+.carouselIMAGE{
+    margin-right: 0;
+}
+.carousel-control-prev, .carousel-control-next{
+    background:none;
+    border: 0;
+}
+.description{
+    text-align: justify;
+}
+
+.divi{
+    display:flex;
+    align-items: center;
+    height:80vh;
+    margin:auto;
+}
+
+.title{
+    color:white;
+    font-weight:bold;
+    font-size: 5rem;
+}
+.title1{
+     color:white;
+    font-weight:bold;
+    font-size: 3rem;
+}

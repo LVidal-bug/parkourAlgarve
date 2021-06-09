@@ -1,0 +1,75 @@
+<%- layout('/layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/newStuf.css">
+    <link rel="stylesheet" href="/css/addForms.css">
+    <div class="all">
+        <div class=" container d-flex flex-column col-lg-6 col-md-10 col-sm-12 mb-3">
+            <form action="/addNew/spot" method="POST" novalidate class="contFORM border submitform11 validated-form p-3"
+                enctype="multipart/form-data">
+                <h1 class="mb-3 text-center">Adicona um spot</h1>
+
+                <div class="mb-3 input-container">
+                    <label for="title" class="form-label">Nome do Spot</label>
+                    <input type="text" class="form-control input" placeholder="Nome do Spot" id="title"
+                        aria-describedby="emailHelp" name="title" required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descrição</label>
+                    <textarea class="form-control descriptionINP" name="description" id="description" cols="30"
+                        rows="10"
+                        placeholder="Faz uma pequena descrição do spot. O que dá para treinar, medidas de segurança, chamadas de atenção, etc"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="images">Adiciona uma imagem (obrigatório) - Max: 5 imagens </label>
+                    <input type="file" class="form-control" id="images" aria-describedby="emailHelp" name="image"
+                        multiple required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Localização (Link De Localização) </label>
+                    <input type="url" class="form-control" id="location" aria-describedby="emailHelp"
+                        placeholder="Digite o link de localização" name="location" required>
+                    <div class="valid-feedback">
+                        Parece Bem!
+                    </div>
+                </div>
+                <div class="mb-3 selectCont">
+                    <select class="form-select select" name="city" aria-label="Default select example">
+                        <option selected>Seleciona o concelho do Spot</option>
+                        <option value="Faro">Faro</option>
+                        <option value="Portimão">Portimão</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Lagoa">Lagoa</option>
+                        <option value="Albufeira">Albufeira</option>
+                        <option value="Aljezur">Aljezur</option>
+                        <option value="Monchique">Monchique</option>
+                        <option value="Silves">Silves</option>
+                        <option value="São Brás">São Brás</option>
+                        <option value="Olhão">Olhão</option>
+                        <option value="Tavira">Tavira</option>
+                        <option value="Alcoutim">Alcoutim</option>
+                        <option value="Castro Marim">Castro Marim</option>
+                        <option value="Vila Real de Santo António">Vila Real de Santo António</option>
+                    </select>
+                </div>
+                <button type="submit" class="submitBTN btn btn-primary">Adicionar </button>
+            </form>
+        </div>
+    </div>
+    <div class="div"></div>
+    <div class="div2 d-flex flex-column"></div>
+    <span class="loader1"></span>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="/scripts/newSpotValidateForm.js"></script>
+    <script src="/scripts/validateFormLoader.js"></script>

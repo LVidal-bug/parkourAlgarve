@@ -1,0 +1,112 @@
+
+.bg-blue{
+background-color:rgb(12, 45, 136);
+    border-color: rgb(12,45,136);}
+.horario{
+    margin-top:2em;
+    display: flex;
+    flex-direction:column;
+    
+    
+}
+.row{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.row div{
+    width:12%;
+    padding:1;
+}
+.white{
+    color:white;
+}
+.borderTD{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.borderTD1{
+    border-left: 1px solid 
+    rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.border1{
+    border:1px solid rgb(27, 101, 238);
+}
+.border2{
+    border:1px solid rgb(27, 101, 238);
+}
+.border3{
+    border:1px solid rgb(27, 101, 238);
+}
+
+@media(max-width:994px){
+    table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	.white{
+        display:none
+    }
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+        display: flex;
+        justify-content:flex-start;
+		padding-left: 10px; 
+
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		/* Top/left values mimic padding */
+        position: flex;
+        text-decoration:italic;
+		top: 6px;
+		left: 6px;
+		width: 30%; 
+		padding-right: 15px; 
+		white-space: nowrap;
+        justify-self: flex-start;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Segunda-Feira"; }
+	td:nth-of-type(2):before { content: "Terça-feira"; }
+	td:nth-of-type(3):before { content: "Quarta-feira"; }
+	td:nth-of-type(4):before { content: "Quinta Feira"; }
+	td:nth-of-type(5):before { content: "Sexta-Feira"; }
+	td:nth-of-type(6):before { content: "Sábado"; }
+	td:nth-of-type(7):before { content: "Domingo"; }
+    td:nth-of-type(8):before { content: "Segunda-Feira"; }
+	td:nth-of-type(9):before { content: "Terça-feira"; }
+	td:nth-of-type(10):before { content: "Quarta-feira"; }
+	td:nth-of-type(11):before { content: "Quinta Feira"; }
+	td:nth-of-type(12):before { content: "Sexta-Feira"; }
+	td:nth-of-type(13):before { content: "Sábado"; }
+	td:nth-of-type(14):before { content: "Domingo"; }
+    td:nth-of-type(15):before { content: "Segunda-Feira"; }
+	td:nth-of-type(16):before { content: "Terça-feira"; }
+	td:nth-of-type(17):before { content: "Quarta-feira"; }
+	td:nth-of-type(18):before { content: "Quinta Feira"; }
+	td:nth-of-type(19):before { content: "Sexta-Feira"; }
+	td:nth-of-type(20):before { content: "Sábado"; }
+	td:nth-of-type(21):before { content: "Domingo"; }
+	
+}
+@media(max-width:500px){
+    td{
+        justify-content: space-around;
+    }
+}

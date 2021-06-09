@@ -1,0 +1,271 @@
+
+.blueTITLE{
+    color: rgb(0, 132, 255);
+}
+.blueSUBTITLE{
+    color: rgb(95, 178, 255);
+}
+.spot{
+    padding:2em;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.head{
+    display: flex;
+    justify-content:space-around;
+}
+.noback{
+    background-color: rgba(240, 248, 255,0);
+    border:none;
+    margin-left: 0.2em;
+}
+
+
+.title{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+   
+    font-weight:bold;
+    font-size:3rem;
+    margin-bottom:0.5em;
+
+}
+.textcont{
+    margin-left: 1em;
+}
+.slide{
+    width:800px;
+
+    }
+.edit{
+    font-size:20px;
+}
+.text{
+    
+    margin-right: 5em;
+    font-size:20px;
+    letter-spacing: 1px;
+    text-align:justify;
+}
+
+.mainCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.middleIMG{
+    width: 800px;
+    height:450px;
+    object-fit: cover;
+}
+.plusINFO{
+
+    display: flex;
+    padding:3em 4em;
+}
+#map{
+    margin-top: 5em;
+height: 350px;
+    width: 100%;
+color:black;
+}
+.mapboxgl-popup-close-button{
+    outline:none;
+    border:0;
+}
+.popTITLE{
+    margin-top:0.5em;
+}
+
+.hide{
+width:0;
+height:0;
+z-index: -1;
+position: absolute;
+
+opacity: 0;
+}
+
+.clipboardCopy{
+    outline:none;
+    border:0;
+    margin-top: 5px;
+     background-color: #4895ef;
+     color:white;
+     letter-spacing: 1px;
+
+}
+.clipboardCopy:hover{
+    background-color:rgba(124, 179, 243);
+}
+#copyinput{
+    width:50%
+}
+#clipboardCopy{
+    width: 12em;
+}
+.copied{
+        outline:none;
+        letter-spacing: 1px;
+        margin-top:5px;
+        border:0;
+        color: white;
+    background-color:rgba(124, 179, 243);
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight:700;
+}
+
+.deleteFORM{
+    margin-left: 0.1em;
+    display:flex;
+    align-items:flex-start;
+}
+.hideBTN{
+    
+    font-weight:700;
+    text-decoration: underline;
+    font-size:20px;
+    height:0;
+    border: 0;
+    background-color:rgba(255, 255, 255,0);
+}
+.hideBTN:hover, .edit:hover{
+ color: rgb(198, 246, 255);
+}
+.nextPrev{
+    background-color: rgba(255, 255, 255,0) ;
+    border: 0;
+   ;
+
+}
+.arrow{
+    font-size:50px;
+    font-weight:700;
+    color:#ffffff;
+}
+
+@media(max-width:1500px){
+    .middleIMG{
+    width: 600px;
+    height:350px;
+    
+}
+.title{
+font-size:4em;
+}
+
+
+
+.slide{
+    width:600px;
+ 
+    }
+    .head{
+        justify-content: space-around;
+    }
+}
+@media(max-width:1250px){
+       
+         .middleIMG{
+    width: 400px;
+    height:250px;
+    
+}
+.text{
+    margin-right: 2em;
+}
+.slide{
+    width:400px;
+    margin:0
+    }
+    .plusINFO{
+
+    display: flex;
+    padding:0;
+    width: 100%;
+    }
+    #map{
+        
+        width:100%;
+    }
+}
+
+@media(max-width:1100px){
+    .textcont{
+        margin-bottom:2em ;
+    }
+    .head{
+       flex-direction: column;
+     
+    }
+    .title{
+        font-size:3rem;
+     align-items: center;
+        width:100%;
+        margin: 0;
+        margin-bottom: 1em;
+    }
+    .middleIMG{
+    width: 750px;
+    height:400px;
+    
+}
+.text{
+    margin:0;
+}
+.divMAPIMG{
+    display:flex;
+    flex-direction: column;
+}
+.slide{
+    align-self: center;
+    width:750px;
+}
+}
+
+@media(max-width:765px){
+    .middleIMG{
+    width:100%;
+    height:300px;
+    
+}
+.title{
+            width:100%;
+    margin: 0;
+    margin-bottom: 1em;  
+    font-size:2rem;
+}
+.slide{
+    width:100%;
+}
+.text{
+    width:100%;
+    margin-left: 0;
+    margin-right: 0
+}
+}
+@media(max-width:500px){
+      .middleIMG{
+    width: 100%;
+    
+}
+.text{
+    font-size: 15px;
+}
+.title{
+  margin-right: 0;
+font-size: 1.5rem;
+}
+.slide{
+    width:100%;
+}
+.hideBTN, .edit{
+    font-size: 15px;
+}
+}
