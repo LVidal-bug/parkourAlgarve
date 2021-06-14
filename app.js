@@ -21,9 +21,9 @@ const userRouter = require('./routes/user.js')
 const spotsRouter = require('./routes/spots.js')
 const adminRouter = require('./routes/admin.js')
 const eventsRouter = require('./routes/events.js')
+const contactRouter = require('./routes/contact.js')
 const { isLoggedIn } = require('./middleware.js');
-const File = require("./models/files.js");
-const bcrypt = require('bcrypt');
+const Event = require("./models/event.js");
 mongoose.connect('mongodb://localhost:27017/parkourAlgarve', {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,
     useFindAndModify: false
@@ -109,6 +109,7 @@ app.use('/', userRouter)
 app.use('/', adminRouter)
 app.use('/', spotsRouter)
 app.use('/', eventsRouter)
+app.use('/', contactRouter)
 
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
@@ -137,6 +138,27 @@ app.get('/auth/google/callback',
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
+})
+
+
+app.use((req,res,next)=>{
+    try{
+        const currentDate = Date.now()
+        const toBeDeleted = Event.deleteMany({endJsDate: {$lt: currentDate}}) 
+       return next()  
+    }catch(e){
+       return next()
+    }
+})
+
+app.use((req,res,next)=>{
+    const currentDate = Date.now()
+    const foundEvents= Event.findMany({isWhiteListed:{whiteListed: true, Date: {$lt:currentDate}}})
+    for(let ev of foundEvents){
+        ev.isWhiteListed.whiteListed = false
+        ev.isWhiteListed.Date = null
+    }
+    if(!foundEvents) return next()
 })
 
 app.use((err, req, res, next) => {
