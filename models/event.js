@@ -32,7 +32,10 @@ const eventSchema = new Schema({
     },
 
     vagas: Array,
-
+    endJsDate:{
+        type:Number,
+        required: true
+    },
     location: {
         spot: {
             type: Schema.Types.ObjectID,
@@ -43,7 +46,7 @@ const eventSchema = new Schema({
 
     isWhiteListed: {
         whiteListed: Boolean,
-        Date: String,
+        Date: Number,
     },
 
     jsPostDate: {
@@ -56,5 +59,11 @@ const eventSchema = new Schema({
         required: true
     },
     sendEmail: Boolean,
+    level:{
+        type: String,
+        enum:["Avançados", "Intermédios","Iniciantes"],
+        required: true
+
+    }
 })
 module.exports = mongoose.model('Event', eventSchema)
