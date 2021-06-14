@@ -95,3 +95,29 @@ module.exports.isAdmin = async (req, res, next) => {
     }
     return next()
 }
+module.exports.canBookClass = async (req,res,next)=>{
+    const {id} = req.params;
+    const event = await Event.findById(id)
+    const level = req.user.level
+    const perm = event.level
+    if(perm === "Iniciantes"){
+     return next()
+    }
+    if(perm=== "Intermédios"){
+        if(level.isIntermidiate){
+         return next()
+        }
+        else{
+         return next(ExpressError("Não tem permisão para se inscrever nesta aula!", 500))
+        }
+    }
+    if(perm=== "Avançados"){
+        if(level.isAdvanced){
+         return next()
+        }
+        else{
+         return next(ExpressError("Não tem permisão para se inscrever nesta aula!", 500))
+        }
+    }
+
+}
