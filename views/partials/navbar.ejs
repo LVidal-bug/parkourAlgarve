@@ -35,14 +35,23 @@
                                     <% } %>
                             </ul>
                         </li>
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Mais
+                            </a>
+                            <ul class="dropdown-menu background" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item color" href="/contactUS">Contacte-nos</a></li>
+                             
+                            </ul>
+                          </li>
 
             </div>
             <div class="navbar-nav ml-auto">
 
                 <% if(!currentUser) {%>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
+                    <div class="d-flex "> <a class="nav-link mr-3" href="/login">Login</a>
+                        <a class="nav-link " href="/register">Register</a></div>
+                   
                     <% } else {%>
                         <a class="nav-link px perfilICON" href="/user/<%=currentUser._id%>"> <i
                                 class=" large material-icons">account_circle</i>
