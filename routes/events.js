@@ -33,7 +33,7 @@ function getDateArray(dateStart, dateEnd) {
     let validationDate = new Date(year, month - 1, day)
     let startMonth = months[month - 1]
     let startDatestr = `${startMonth}/${day}/${year}`
-    let startDatejs = Date.parse(`${day}/${month}/${year}`)
+    let startDatejs = Date.parse(`${month}/${day}/${year}`)
     //End date//
 
     let day1 = dateEnd.substring(0, 2)
@@ -137,6 +137,18 @@ function validateWhiteList(date, date2) {
     return canBeWhiteListed = true
 
 }
+let EnddateJs = null
+function getEndJsDate (date, hour){
+    EnddateJs = null
+    let day = date.substring(0, 2)
+    let month = date.substring(3, 5)
+    let year = date.substring(6, 10)
+    let hour = hour.substring(0, 2)
+    let min = hour.substring(3, 5)
+    const enddateJs = Date.parse(`${month}/${day}/${year} ${hour}:${min}`)
+    EnddateJs = enddateJs
+    
+}
 ///////
 
 router.get('/api/allEvents', catchAsync(async (req, res) => {
@@ -181,6 +193,7 @@ router.post('/new/event', validateEvent, catchAsync(async (req, res) => {
         freeSpaces = -1
     }
     const newEvent = await new Event({ name, description, type, freeSpaces, sendEmail })
+    console.log(newEvent.sendEmail)
     getDateArray(startDate, endDate)
     if (date[0] === 'Invalid Date - To Late' || date[0] === 'Invalid Date - To Large' || date[0] === 'Invalid Date') {
         req.flash('error', 'Data inválida!')
@@ -197,13 +210,14 @@ router.post('/new/event', validateEvent, catchAsync(async (req, res) => {
     newEvent.date = date
     newEvent.jsPostDate = Date.now()
     newEvent.EndDate = endDate
+    getEndJsDate(EndDate, endHour)
+    newEvent.endJsDate = EnddateJs
     newEvent.vagas = []
     validateWhiteList(`${whiteListDate} ${whiteListHour}`, `${startDate} ${startHour}`)
     if (!canBeWhiteListed) {
         req.flash('error', 'Data de publicação errada!')
         return res.redirect('/new/event')
     }
-    console.log(!req.body.whiteListDate, req.body.whiteListDate)
     if (!req.body.whiteListDate) {
         newEvent.isWhiteListed.whiteListed = false
         newEvent.isWhiteListed.jsDate = null
@@ -227,7 +241,6 @@ router.post('/new/event', validateEvent, catchAsync(async (req, res) => {
         newEvent.location.link = null
 
     }
-    console.log(req.body)
     //   await newEvent.save()
     //  console.log(newEvent)
     //req.flash('success', 'Evento marcado com sucesso!')
