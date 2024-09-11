@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Montserrat&family=Sacramento&display=swap");
+
+.container{
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width:200px; /* you can use % */
+    height: auto;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+}
+
+.button-home {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-home:after {
+  content: "";
+  background-color: #faaf3c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-home:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.button-about {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-about:after {
+  content: "";
+  background-color: #075FED;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-about:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.button-info {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-info:after {
+  content: "";
+  background-color: #b6b6b6;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-info:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-home {
+    padding: 15px 50px 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+@media (min-width: 768px) {
+  .button-info{
+  padding: 15px 50px 13px;
+  margin-left: 5px;
+  margin-right: 5px;}
+}
+@media (min-width: 768px) {
+  .button-about{
+    padding: 15px 50px 13px;
+    margin-left: 5px;
+    margin-right: 5px;}
+}
+
+nav > ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    list-style: none;
+    margin-right: 10%;
+}
