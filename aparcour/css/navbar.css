@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Montserrat&family=Sacramento&display=swap");
 
+body{
+  margin: 0px;
+}
+
 .container{
     font-family: "Merriweather Sans", sans-serif;
+    padding: 0px;
 }
 
 .navbar{
@@ -9,10 +14,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 0px;
+    padding-left: 14px;
+    box-shadow: 2px 1px 5px #b6b6b6;
+}
+
+#navtitle{
+  margin-left: 10px;
+}
+
+.navcontent{
+  padding-right: 15px;
 }
 
 .logo{
-    width:200px; /* you can use % */
+    width: 150px; /* you can use % */
     height: auto;
 }
 
@@ -119,6 +135,39 @@
   left: 0px;
 }
 
+.button-register {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-register:after {
+  content: "";
+  background: rgb(182,182,182);
+  background: linear-gradient(100deg, rgba(182,182,182,1) 20%, rgba(7,95,237,1) 21%, rgba(7,95,237,1) 78%, rgba(250,175,60,1) 79%);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-register:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
 @media (min-width: 768px) {
   .button-home {
     padding: 15px 50px 13px;
@@ -128,6 +177,12 @@
 }
 @media (min-width: 768px) {
   .button-info{
+  padding: 15px 50px 13px;
+  margin-left: 5px;
+  margin-right: 5px;}
+}
+@media (min-width: 768px) {
+  .button-register{
   padding: 15px 50px 13px;
   margin-left: 5px;
   margin-right: 5px;}
