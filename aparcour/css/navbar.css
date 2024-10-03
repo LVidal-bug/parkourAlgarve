@@ -27,7 +27,7 @@ body{
   padding-right: 15px;
 }
 
-.logo{
+.logo-nav{
     width: 150px; /* you can use % */
     height: auto;
 }
@@ -37,6 +37,42 @@ body{
     flex-direction: row;
     align-items: center;
     margin-right: auto;
+}
+
+@media screen and (max-width: 1150px) {
+  #navtitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title{
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .navbar{
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#navbuttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    list-style: none;
+    margin-right: 10%;
+}
+
+@media screen and (max-width: 810px) {
+  #navbuttons{
+    flex-direction: column;
+  }
 }
 
 .button-home {
@@ -139,7 +175,7 @@ body{
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
-  padding: 13px 20px 13px;
+  padding: 20px 20px 20px;
   outline: 0;
   border: 1px solid black;
   cursor: pointer;
@@ -153,7 +189,7 @@ body{
 .button-register:after {
   content: "";
   background: rgb(182,182,182);
-  background: linear-gradient(100deg, rgba(182,182,182,1) 20%, rgba(7,95,237,1) 21%, rgba(7,95,237,1) 78%, rgba(250,175,60,1) 79%);
+  background: linear-gradient(100deg, rgba(250,175,60,1) 20%, rgba(7,95,237,1) 21%, rgba(7,95,237,1) 78%, rgba(182,182,182,1) 79%);
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -169,35 +205,44 @@ body{
 }
 
 @media (min-width: 768px) {
+  .button-register{
+    padding: 20px 50px 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .button-about{
+    padding: 15px 50px 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .button-info{
+    padding: 15px 50px 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .button-home {
     padding: 15px 50px 13px;
     margin-left: 5px;
     margin-right: 5px;
   }
 }
-@media (min-width: 768px) {
-  .button-info{
-  padding: 15px 50px 13px;
-  margin-left: 5px;
-  margin-right: 5px;}
-}
-@media (min-width: 768px) {
+
+@media (max-width: 768px) {
   .button-register{
-  padding: 15px 50px 13px;
-  margin-left: 5px;
-  margin-right: 5px;}
-}
-@media (min-width: 768px) {
+    padding: 20px 50px 20px;
+    margin-bottom: 5px;
+  }
   .button-about{
     padding: 15px 50px 13px;
-    margin-left: 5px;
-    margin-right: 5px;}
+    margin-bottom: 5px;
+  }
+  .button-info{
+    padding: 15px 50px 13px;
+    margin-bottom: 5px;
+  }
+  .button-home {
+    padding: 15px 50px 13px;
+    margin-bottom: 5px;
+  }
 }
 
-nav > ul{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    list-style: none;
-    margin-right: 10%;
-}

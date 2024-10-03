@@ -1,0 +1,37 @@
+body{
+    margin: 0px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    background-image: url("../images/upscaled-background-main.jpeg");
+    background-repeat: no-repeat;
+    background-size: 1800px;
+    background-attachment: fixed;
+    height: 200%;
+    padding-bottom: 250px;
+}
+
+.logo{
+    margin-left: auto;
+    padding-top: 60px;
+}
+
+.arrow{
+    margin-left: auto;
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+
+@media screen and (max-width: 810px) {
+    .arrow{
+        display: none;
+    }
+    .logo{
+        margin-right: auto;
+    }
+}
