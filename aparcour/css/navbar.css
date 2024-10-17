@@ -10,13 +10,19 @@ body{
 }
 
 .navbar{
+    position: fixed;
+    top: 0%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 0px;
     padding-left: 14px;
+    padding-right: 10px;
+    background-color: aliceblue;
     box-shadow: 2px 1px 5px #b6b6b6;
+    z-index: 2;
 }
 
 #navtitle{

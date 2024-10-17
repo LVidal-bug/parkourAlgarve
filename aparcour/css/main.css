@@ -3,6 +3,7 @@ body{
 }
 
 .main{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,24 +15,30 @@ body{
     background-attachment: fixed;
     height: 200%;
     padding-bottom: 250px;
+    z-index: 1;
+    padding-top: 150px;
 }
 
 .logo{
-    margin-left: auto;
     padding-top: 60px;
 }
 
-.arrow{
-    margin-left: auto;
-    align-self: flex-start;
-    justify-self: flex-end;
+.break{
+    z-index: 2;
+    margin: 0%;
+    padding: 10px 10px 200px 10px;
+    box-shadow:0px -10px 6px 12px #888, inset 0px 8px 6px -6px #888;
+    background-color: aliceblue;
 }
 
-@media screen and (max-width: 810px) {
-    .arrow{
-        display: none;
+.about{
+    margin-top: 15px;
+
+}
+
+@media screen and (max-width: 1000px) {
+    body{
+        padding-top: 200px;
     }
-    .logo{
-        margin-right: auto;
-    }
+
 }
