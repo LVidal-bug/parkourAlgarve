@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap');
+
 body{
     margin: 0px;
 }
@@ -31,14 +33,25 @@ body{
     background-color: aliceblue;
 }
 
-.about{
-    margin-top: 15px;
+#about{
+    margin: 0px;
+    padding: 10px;
+    font-family: "Quicksand", sans-serif;
+    background-image: url("../images/trees.jpeg");
+    background-repeat: no-repeat;
+    background-size: 1750px;
+    background-attachment: fixed;
+    background-position: 0%;
+}
 
+#about > h2 {
+    margin: 0px;
+    text-shadow: -1px 4px 11px;
+    color: rgba(250,175,60,1);
 }
 
 @media screen and (max-width: 1000px) {
     body{
         padding-top: 200px;
     }
-
 }
