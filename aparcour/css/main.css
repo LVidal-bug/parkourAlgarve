@@ -11,9 +11,9 @@ body{
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    background-image: url("../images/upscaled-background-main.jpeg");
+    background-image: url("../images/main.jpg");
     background-repeat: no-repeat;
-    background-size: 1800px;
+    background-size: 1750px;
     background-attachment: fixed;
     height: 200%;
     padding-bottom: 250px;
@@ -23,6 +23,8 @@ body{
 
 .logo{
     padding-top: 60px;
+    width: 400px;
+    height: auto;
 }
 
 .break{
@@ -37,21 +39,62 @@ body{
     margin: 0px;
     padding: 10px;
     font-family: "Quicksand", sans-serif;
-    background-image: url("../images/trees.jpeg");
+    background-color: aliceblue;
+    background-image: url("../images/upscaled-background-about.jpeg");
     background-repeat: no-repeat;
-    background-size: 1750px;
+    background-size: 1800px;
     background-attachment: fixed;
-    background-position: 0%;
+    box-shadow: inset 0px -4px 8px -5px;
 }
 
-#about > h2 {
-    margin: 0px;
-    text-shadow: -1px 4px 11px;
+.about-us{
+    display: flex;
+    flex-direction: column;
     color: rgba(250,175,60,1);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-bottom: 10px;
+    margin-left: 620px;
+    
+}
+
+.about-us > h1 {
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    margin: 0px;
+    font-size: xxx-large;
+    margin-bottom: 20px;
+    font-family: "Quicksand", sans-serif;
+}
+
+#aparcour-about{
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+.about-us > pre, .about-us > p  {
+    padding-left: 10px;
+    display: flex;
+    margin: 0px;
+    font-size: xx-large;
+    color: black;
+    font-family: roboto , "Quicksand", sans-serif;
+}
+
+.about-us > h2 {
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 @media screen and (max-width: 1000px) {
     body{
         padding-top: 200px;
     }
+    .about-us {
+        margin-left: 20px;
+    }
+    .main{
+        background-position-x: -620px;
+    }
 }
+
