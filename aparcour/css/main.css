@@ -40,11 +40,13 @@ body{
     padding: 10px;
     font-family: "Quicksand", sans-serif;
     background-color: aliceblue;
-    background-image: url("../images/upscaled-background-about.jpeg");
+    background-image: url("../images/upscaled-background-about.jpg");
     background-repeat: no-repeat;
     background-size: 1800px;
     background-attachment: fixed;
+    background-position: -73px 0px;
     box-shadow: inset 0px -4px 8px -5px;
+    z-index: -2;
 }
 
 .about-us{
@@ -53,7 +55,7 @@ body{
     color: rgba(250,175,60,1);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin-bottom: 10px;
-    margin-left: 620px;
+    margin-left: 530px;
     
 }
 
@@ -69,7 +71,7 @@ body{
 
 #aparcour-about{
     margin-top: 300px;
-    margin-bottom: 300px;
+    margin-bottom: 150px;
 }
 
 .about-us > pre, .about-us > p  {
@@ -86,6 +88,12 @@ body{
     padding-left: 10px;
 }
 
+#about-button{
+    margin: 100px 150px 20px 150px; 
+    z-index: 1;
+    
+}
+
 @media screen and (max-width: 1000px) {
     body{
         padding-top: 200px;
@@ -95,6 +103,21 @@ body{
     }
     .main{
         background-position-x: -620px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    #about{
+        background-position: -50px 200px;
+    }
+    .about-us {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #about-button{
+        margin: 100px 10px 20px 0px; 
+
     }
 }
 
