@@ -39,12 +39,10 @@
               Sobre nós
             </h1>
           <p>
-              A A.P.A.R.C.O.U.R. é uma associação 
-              sem fins lucrativos cuja missão é 
-              de promoção da disciplina de parkour, da sua
-              filosofia e benefícios para a saúde,
-              e dos atletas que praticam na região 
-              do Algarve através de aulas, eventos e média. Neste momento mais baseado na região de Portimão.
+              A A.P.A.R.C.O.U.R. é uma associação juvenil sem fins lucrativos que 
+              tenta melhorar a comunidade através da movimentação, especificamente a 
+              ultrapassar obstáculos, individualmente ou em grupo, e entender essa relação com obstáculos interiores/emocionais.
+
           </p></div>
         </div>
         
@@ -57,5 +55,17 @@
           </div>
       </footer>
     </body>
-    <script src="js/button.js"></script>
+    <script src="js/button.js">
+    </script>
+    <script> 
+      window.addEventListener('load', function() {
+          const about = 'about';
+          if (window.location.hash === `#${about}`) {
+            history.replaceState(null, null, ' ');
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            history.replaceState(null, null, `#${targetId}`);
+                
+          }
+      });
+  </script>
 </html>

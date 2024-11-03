@@ -20,7 +20,7 @@
           <nav class="navcontent">
             <ul id="navbuttons">
               <li><button class="js-home-button button-home button-52" role="button">Principal</button></li>
-              <li><button class="js-about-button button-about button-52" role="button">Sobre</button></li>
+              <li><button onclick="goToAbout()" class="js-about-button button-about button-52" role="button">Sobre</button></li>
               <li><button class="js-info-button button-info button-52" role="button">Horários/Local</button></li>
               <li><button class="js-register-button button-register button-52" role="button">Inscrição</button></li>
             </ul>
@@ -88,4 +88,9 @@
    <script src="js/local.js"></script> 
 </body>
     <script src="js/button.js"></script>
+    <script>
+        function goToAbout() {
+            window.location.href = "index.html#about";
+        }
+    </script>
 </html>
