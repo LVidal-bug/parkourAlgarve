@@ -25,6 +25,23 @@ margin: 0;
     .seccao-horarios-bg{
         margin-top: 250px;
     }
+    #local-div{
+        flex-direction: column;
+    }
+
+    #local-div > iframe{
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+#local-div{
+    display: flex;
+}
+
+#local-div > iframe{
+    margin-right: 20px;
 }
 
 .seccao-horarios{
