@@ -99,7 +99,7 @@ footer{
   font-family: "Quicksand", sans-serif;
 }
 
-footer > img {
+.footer-img {
   margin-top: 10px;
   margin-right: 30px;
   width: 100px;
