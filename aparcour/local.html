@@ -16,8 +16,13 @@
           <div class="title">
             <img class="logo-nav" src="images/aparcour-LOGO-def-trasnparent.png" alt="APARCOUR LOGO">
             <h2 id="navtitle">A.P.A.R.C.O.U.R.</h2>
+            <button id="hamburguer-button">
+              <img id="hamburguer" class="toggle-menu" src="images/Hamburger_icon.png" alt="Hamburguer Icon">
+              <img style="width: 70px;" id="X-button" class="toggle-menu hide-nav" src="images/x.png" alt="X">
+            </button>
           </div>
-          <nav class="navcontent">
+          
+          <nav class="navcontent hide-nav">
             <ul id="navbuttons">
               <li><button class="js-home-button button-home button-52" role="button">Principal</button></li>
               <li><button onclick="goToAbout()" class="js-about-button button-about button-52" role="button">Sobre</button></li>
@@ -26,6 +31,7 @@
             </ul>
           </nav>
         </div>
+
       </div>
 
 <section class="seccao-horarios-bg">
@@ -88,7 +94,8 @@
         <a href="https://www.instagram.com/aparcour.pt" target="_blank" rel="external"><img class="minilogo" src="images/insta-logo.png" alt="Twitter Logo"></a>
     </div>
   </footer>
-   <script src="js/local.js"></script> 
+   <script src="js/local.js"></script>
+   <script src="js/navbar.js"></script>
 </body>
     <script src="js/button.js"></script>
     <script>

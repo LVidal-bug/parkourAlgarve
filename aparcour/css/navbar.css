@@ -15,10 +15,9 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     margin: 0px;
-    padding-left: 14px;
+    padding-left: 10px;
     padding-right: 10px;
     background-color: aliceblue;
     box-shadow: 2px 1px 5px #b6b6b6;
@@ -58,11 +57,9 @@ body{
   }
   .navbar{
     flex-direction: column;
-    align-items: center;
   }
-  .navbar{
-    flex-direction: column;
-    align-items: center;
+  .toggle-menu{
+    align-items: end;
   }
 }
 
@@ -76,8 +73,36 @@ body{
 }
 
 @media screen and (max-width: 810px) {
+  .title{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 40px;
+  }
   #navbuttons{
     flex-direction: column;
+  }
+  .toggle-menu{
+    height: 60px;
+    flex-direction: row;
+    align-items: end;
+  }
+  .hide-nav{
+    display: none;
+  }
+}
+
+
+
+#hamburguer-button{
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 810px) {
+  .toggle-menu{
+    display: none;
   }
 }
 
@@ -107,6 +132,9 @@ footer{
   display: flex;
   align-items: center;
 }
+
+
+
 
 .button-home {
   font-size: 16px;

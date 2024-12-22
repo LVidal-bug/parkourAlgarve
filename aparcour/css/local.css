@@ -23,7 +23,7 @@ margin: 0;
 
 @media screen and (max-width: 800px){
     .seccao-horarios-bg{
-        margin-top: 250px;
+        margin-top: 0px;
     }
     #local-div{
         flex-direction: column;

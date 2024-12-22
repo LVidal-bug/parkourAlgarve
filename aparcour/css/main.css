@@ -96,7 +96,7 @@ body{
 
 @media screen and (max-width: 1000px) {
     body{
-        padding-top: 200px;
+        padding-top: 100px;
     }
     .about-us {
         margin-left: 20px;
@@ -107,7 +107,7 @@ body{
 }
 @media screen and (max-width: 1100px) {
     #about{
-        background-position: -50px 200px;
+        background-position: -100px 100px;
     }
     .about-us {
         margin-left: 20px;
